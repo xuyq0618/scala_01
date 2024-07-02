@@ -61,6 +61,10 @@ object Test06_HighOrderFunction {
     var aa = f5
     println(aa) // 返回引用,aa已经是f6了
     println(aa(111))
+    println(aa(222))
+
+    //
+
 
 
 
