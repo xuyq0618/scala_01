@@ -5,5 +5,6 @@ object Test02_PackageObject {
     println(commValue)
     commMethod()
 
+    //注意：包对象必须和包在同一层级，不然访问不到
   }
 }
