@@ -8,7 +8,6 @@ object Test03_Class {
     println(s.age)
     s.age = 19
     println(s.age)
-
   }
 
   //定义一个类
