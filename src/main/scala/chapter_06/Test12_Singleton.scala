@@ -32,7 +32,5 @@ object Test12_Singleton {
         }
         student
       }
-
-
   }
 }

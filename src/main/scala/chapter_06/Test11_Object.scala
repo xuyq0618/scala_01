@@ -32,5 +32,6 @@ object Test11_Object {
 
     //apply 方法 ,调用时apply可以省略
     def apply(name:String,age:Int):Student11 = new Student11(name,age)
+
   }
 }
