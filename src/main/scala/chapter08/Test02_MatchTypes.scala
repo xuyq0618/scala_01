@@ -55,5 +55,55 @@ object Test02_MatchTypes {
         println(result)
       }
 
+
+    //4、匹配列表(基本 同上、特殊)
+    val  lst1 = List(1,2,3,4,5,6)
+    val  lst2 = List(3)
+
+    def matchListTest(lst:List[Int]) = {
+        lst match {
+          case first :: second :: rest => println(s"first:$first,second:$second,resst:$rest")
+          case _ => println("something else")
+        }
+    }
+
+    matchListTest(lst1)
+    matchListTest(lst2)
+
+    //5、匹配元组（基本 同上 、特殊）
+    //(1) 在变量声明中匹配
+    val (x, y) = (1, 2)
+    println(s"x=$x,y=$y")
+
+
+    val List(first,second,_*) = List(2,3,4)
+    println(s"first:$first,second:$second")
+
+    val fir::sec::rest = List(1,2,3,4,5,6)
+    println(fir)
+    println(sec)
+    println(rest)
+
+//    (2)for 推导式中进行模式匹配
+    val lt:List[(String, Int)] = List(
+      ("a",2),
+      ("b",3),
+      ("c",12),
+      ("v",22),
+      ("a",233)
+    )
+
+    //方法1、
+    for(elem <- lt) println(elem._1,elem._2)
+
+    //方法2将list的元素直接定义为元组，对变量赋值
+    for((word,count) <- lt) println(word+":"+count)
+
+    //不考虑某个位置的变量，只遍历key or value
+    for((key,_) <- lt) println(key)
+    println("==================")
+    for((_,v) <- lt) println(v)
+
+
   }
 }
